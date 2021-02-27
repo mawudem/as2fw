@@ -6,30 +6,13 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from blog.models import Post, Comment
 from django.utils import timezone
-from blog.forms import PostForm, CommentForm
+from blog.forms import CommentForm
 from django.contrib.auth.models import User
 from django.views.generic import (TemplateView,ListView,
                                   DetailView,CreateView,
                                   UpdateView,DeleteView)
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
-
-def signUp(request):
-	if request.method == 'POST':
-		Username = request.POST.get('Username')
-		password = request.POST.get('password')
-		instance = User(username=Username, password=password)
-		instance.save()
-		user = User.objects.get(username=Username	)
-		user.is_staff = True
-		user.is_admin = True
-		user.save()
-		user.is_superuser = True
-		print(Username)
-	return render(request, 'registration/signup.html', {})
-
-class AboutView(TemplateView):
-    template_name = 'blog/about.html'
 
 class PostListView(ListView):
     model = Post
@@ -40,29 +23,6 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
 
-class CreatePostView(LoginRequiredMixin,CreateView):
-    login_url = '/login/'
-    redirect_field_name = 'blog/post_detail.html'
-    form_class = PostForm
-    model = Post
-
-class PostUpdateView(LoginRequiredMixin,UpdateView):
-    login_url = '/login/'
-    redirect_field_name = 'blog/post_detail.html'
-    form_class = PostForm
-    model = Post
-
-class DraftListView(LoginRequiredMixin,ListView):
-    login_url = '/login/'
-    redirect_field_name = 'blog/post_list.html'
-    model = Post
-    def get_queryset(self):
-        return Post.objects.filter(published_date__isnull=True).order_by('created_date')
-
-
-class PostDeleteView(LoginRequiredMixin,DeleteView):
-    model = Post
-    success_url = reverse_lazy('post_list')
 
 #######################################
 ## Functions that require a pk match ##

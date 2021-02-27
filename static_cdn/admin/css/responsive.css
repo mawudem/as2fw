@@ -856,7 +856,6 @@ input[type="submit"], button {
     }
 
     /* Login */
-
     body.login {
         padding: 0 15px;
     }
@@ -911,7 +910,6 @@ input[type="submit"], button {
     }
 
     /* Calendar and clock */
-
     .calendarbox, .clockbox {
         position: fixed !important;
         top: 50% !important;
@@ -985,7 +983,6 @@ input[type="submit"], button {
     }
 
     /* History */
-
     table#change-history tbody th, table#change-history tbody td {
         font-size: 13px;
         word-break: break-word;
@@ -996,7 +993,6 @@ input[type="submit"], button {
     }
 
     /* Docs */
-
     table.model tbody th, table.model tbody td {
         font-size: 13px;
         word-break: break-word;
