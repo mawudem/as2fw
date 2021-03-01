@@ -20,7 +20,33 @@ def  index(request):
     template = loader.get_template('index.html')
     return HttpResponse(template.render({'about':a, 'photo':photo, 'projet': projet}))
 
-def  post(request):
+def  Histoire(request):
     #getting the templates
-    template = loader.get_template('single.html')
+    template = loader.get_template('histoire.html')
     return HttpResponse(template.render())
+
+
+def  Atout(request):
+    #getting the templates
+    template = loader.get_template('atout.html')
+    return HttpResponse(template.render())
+
+
+def  Don(request):
+    #getting the templates
+    template = loader.get_template('don.html')
+    return HttpResponse(template.render())
+
+def  Inscription(request):
+    #getting the templates
+    template = loader.get_template('inscription.html')
+    return HttpResponse(template.render())
+
+
+def  Vision(request):
+    #getting the templates
+    template = loader.get_template('vision.html')
+    return HttpResponse(template.render())
+
+
+    
