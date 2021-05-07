@@ -10,7 +10,7 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE,)
     title = models.CharField(max_length=200)
     text = models.TextField()
-    photo= models.ImageField(upload_to='images/', null=True)
+    photo = models.ImageField(upload_to='images/', null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
@@ -41,12 +41,11 @@ class Comment(models.Model):
     def __str__(self):
         return self.text
 
-
 class About(models.Model):
     experience_year = models.IntegerField(default = 0)
     project_finish = models.IntegerField(default = 0)
     project_appending = models.IntegerField(default = 0)
-    project_not_start  = models.IntegerField(default = 0)
+    project_not_start = models.IntegerField(default = 0)
 
 class Galerie(models.Model):
     title = models.CharField(max_length=100)

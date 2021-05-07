@@ -5,17 +5,17 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-md-8 ftco-animate mt-5" data-scrollax=" properties: { translateY: '70%' }">
           	<p class="d-flex align-items-center" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
-							<a href="/static/videos/videotest.mp4" class="icon-video popup-vimeo d-flex justify-content-center align-items-center mr-3">
-    						<span class="ion-ios-play play mr-2"></span>
-    						<span class="watch text-dark">Video de Presentation</span>
-    					</a>
-						</p>
+                <a href="/static/videos/videotest.mp4" class="icon-video popup-vimeo d-flex justify-content-center align-items-center mr-3">
+                    <span class="ion-ios-play play mr-2"></span>
+                    <span class="watch text-dark">Video de Presentation</span>
+                </a>
+            </p>
             <h1 class="mb-4 text-success" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Seul on avance mais a plusieur on avance plus vite</h1>
           </div>
         </div>
       </div>
     </section>
-		
+
 	<section class="ftco-section ftco-services ftco-no-pt">
       <div class="container">
         <div class="row services-section">
@@ -28,7 +28,7 @@
                 adhérents aux présents statuts, une association de solidarité et de soutiens mutuels, à but non lucratif,
                 régie par la loi du 1 er juillet 1901.</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-4 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 services text-center d-block">
@@ -76,19 +76,21 @@ développement du village de Wonougba./p>
 			          	<span class="subheading">A propos de nous </span>
 			            <h2 class="mb-4">Debuter le 26 Août 2018 à 14 heures 30 min</h2>
 			            <p>Vu les besoins récurrents exprimés par les Filles et Fils de Wonougba de se retrouver au sein d’un cadre
-de réflexion pour leur bien-être socio-culturel ;<br>
-Vu les difficultés qu’éprouvent les Filles et Fils de Wounougba pour se soutenir mutuellement en cas
-d’événements heureux et malheureux ;<br>
-Vu l’absence de cadre de réflexion pour les Filles et Fils de Wonougba sur les sujets engageant le
-développement de leur village (Wonougba) ;<br>
-Vu les valeurs d'unité, de solidarité, d'entraide et de soutiens mutuels qui favorisent une vie
-harmonieuse des Filles et Fils de Wonougba ;
-Vu la nécessité de se mettre ensemble ;<br>
-Les Filles et Fils de Wonougba, réunis en Assemblée Générale le 26 Août 2018 à 14 heures 30 min à
-Lomé dans l’enceinte de l’Ecole Primaire Publique d’Atikpa, décident de la création d’une Association
-régie par la loi N° 40 - 484 du 1er Juillet 1901 en vue de contribuer à leur épanouissement socio-culturel
-à travers des actions de solidarité et de soutiens mutuels et de soutenir toute action de développement
-de leur village (Wonougba)<br>.</p>
+                            de réflexion pour leur bien-être socio-culturel ;<br>
+                            Vu les difficultés qu’éprouvent les Filles et Fils de Wounougba pour se soutenir mutuellement en cas
+                            d’événements heureux et malheureux ;<br>
+                            Vu l’absence de cadre de réflexion pour les Filles et Fils de Wonougba sur les sujets engageant le
+                            développement de leur village (Wonougba) ;<br>
+                            Vu les valeurs d'unité, de solidarité, d'entraide et de soutiens mutuels qui favorisent une vie
+                            harmonieuse des Filles et Fils de Wonougba ;
+                            Vu la nécessité de se mettre ensemble ;<br>
+                            Les Filles et Fils de Wonougba, réunis en Assemblée Générale le 26 Août 2018 à 14 heures 30 min à
+                            Lomé dans l’enceinte de l’Ecole Primaire Publique d’Atikpa, décident de la création d’une Association
+                            régie par la loi N° 40 - 484 du 1er Juillet 1901 en vue de contribuer à leur épanouissement socio-culturel
+                            à travers des actions de solidarité et de soutiens mutuels et de soutenir toute action de développement
+                            de leur village (Wonougba)
+                            <br>.
+                        </p>
 			          </div>
 		        	</div>
 		    		<div class="row">
@@ -141,19 +143,19 @@ de leur village (Wonougba)<br>.</p>
     		<div class="row">
     			<div class="col-md-12 testimonial">
             <div class="carousel-project owl-carousel">
-              {%for tof in photo%}
+              {%for gal in galerie%}
             	<div class="item">
             		<div class="project">
-		    					<div class="img">
-				    				<img src="/static/images/project-1.jpg" class="img-fluid" alt="Colorlib Template">
-				    				<a href="/static/images/project-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-				    					<span class="icon-expand"></span>
-				    				</a>
-			    				</div>
-			    				<div class="text px-4">
-			    					<h3><a href="#">{{tof.title}}</a></h3>
-			    				</div>
-		    				</div>
+                        <div class="img">
+                            <img src="/static/{{gal.photo}}" class="img-fluid" alt="Colorlib Template">
+                            <a href="/static/{{gal.photo}}" class="icon image-popup d-flex justify-content-center align-items-center">
+                                <span class="icon-expand"></span>
+                            </a>
+                        </div>
+                        <div class="text px-4">
+                            <h3><a href="#">{{gal.title}}</a></h3>
+                        </div>
+                    </div>
             	</div>
               {%endfor%}
     		</div>
@@ -178,7 +180,7 @@ de leur village (Wonougba)<br>.</p>
               {%for proje in projet%}
 	        		<div class="item">
 	        			<div class="testimony-wrap d-flex align-items-stretch">
-		              <div class="user-img d-flex align-self-stretch" style="background-image: url(/static/images/testimony-1.jpg)">  
+		              <div class="user-img d-flex align-self-stretch" style="background-image: url(/static/{{proje.photo}})">
                   </div>
 		              <div class="text d-flex align-items-center">
 		              	<div>
@@ -230,7 +232,7 @@ de leur village (Wonougba)<br>.</p>
                 <span class="icon-paper-plane"></span>
               </div>
               <h3 class="mb-4">Email Address</h3>
-              <p><a href="mailto:koledziabel@gmail.com">koledziabel@gmail.com</a></p>
+              <p><a href="mailto:koledziabel@gmail.com">mawunyozigan@yahoo.fr</a></p>
             </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex">

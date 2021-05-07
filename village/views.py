@@ -10,14 +10,14 @@ def  index(request):
     # selectionner la derniere mise a jour d'about
     about = About.objects.order_by('id')
     for a in about:
-    	pass
+        pass
     # selectionner les photo à metre dans la galerie
-    photo = Galerie.objects.order_by('id')
+    galerie = Galerie.objects.order_by('id')
 
     # selectionnen les projets
     projet = Projet.objects.order_by('id') #.filter(Status_title = "En cours...")
     template = loader.get_template('index.html')
-    return HttpResponse(template.render({'about':a, 'photo':photo, 'projet': projet}))
+    return HttpResponse(template.render({'about': a, 'galerie': galerie, 'projet': projet}))
 
 def  Don(request):
     #getting the templates

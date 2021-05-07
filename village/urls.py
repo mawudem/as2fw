@@ -20,6 +20,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from .views import *
 from blog import views
+from django.views.static import serve
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,9 +33,11 @@ urlpatterns = [
     #++++++++++++++++++++++++++++++++++++++++++++++++
     path('post/', views.PostListView.as_view(), name='post_list'),  # la page de detaille d'un blog
     path('post/<int:pk>/', views.PostDetailView.as_view(), name='post_detail'),
+
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]	
 
 if settings.DEBUG:   
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)# me rappeler de chercher le role de la ligne la quand je serai connecte
