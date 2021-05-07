@@ -27,7 +27,7 @@ SECRET_KEY = '-%w0fmvosi3vnz3cz785aljefwn$84jn-djuepgtje-mw2jaid'
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','as2fw.herokuapp.com']
 
 """ADMINS = (
 ('abel', 'koledziabel@gmail.com'),
